@@ -3,12 +3,14 @@ import {r4r,div,button,input,br} from '../js/utils.js'
 URL = "https://www.wasask.se/aaawasa/wordpress/?s="
 
 data = null
-click = => window.location = URL + data.value
-keypress = (e) => if e.keyCode == 13 then click()
+onclick = => window.location = URL + data.value
+onkeypress = (e) => if e.keyCode == 13 then onclick()
+
 
 r4r =>
-	div {style:"width:600px"},
+	div {style : "font-size:32px; text-align:center"},
 		"Sök inom Wasa Schackklubbs hemsida:",
-		data = input {style:"width:600px; font-size:32px;", onkeypress : keypress}
 		br {}
-		button {type:"submit", style:"width:608px; font-size:32px;",onclick: click},"Sök"
+		data = input {style: "font-size:32px; width:600px",onkeypress}
+		br {}
+		button {style: "font-size:32px; text-align:center; width:608px", onclick},"Sök"
