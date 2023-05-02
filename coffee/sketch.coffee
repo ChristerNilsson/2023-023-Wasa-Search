@@ -14,6 +14,12 @@ makeButton = (url, text) => [
 
 tds = {style:"border:1px solid black"}
 
+rubrik = (a,b,c) =>
+	tr {},
+		th tds, a
+		th tds, b
+		th tds, c
+
 rad = (a,b,c) =>
 	tr {},
 		td tds, a
@@ -32,10 +38,7 @@ r4r =>
 		br {}
 		br {}
 		table {style:"border:1px solid black; margin:auto; border-collapse: collapse;"},
-			tr {},
-				th tds, "Egenskap"
-				th tds, "BB1"
-				th tds, "BB2"
+			rubrik "Egenskap", "BB1", "BB2"
 			rad "Maximal upplösning", "Nej", "Ja"
 			rad "Beskrivande text", "Nej", "Ja"
 			rad "Länk till Inbjudan", "Nej", "Ja"
