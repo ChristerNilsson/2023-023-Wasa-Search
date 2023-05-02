@@ -7,17 +7,17 @@ URL4 = "https://storage.googleapis.com/bildbanken2/index.html?query="
 
 data = null
 click = (url) => window.location = url + data.value
+makeButton = (url, text) => [
+	br {}
+	button {style:"font-size:32px; text-align:center; width:608px", onclick: => click url}, text
+]
 
 r4r =>
 	div {style:"font-size:32px; text-align:center"},
 		"Wasa SK sökruta",
 		br {}
 		data = input {style:"font-size:32px; width:600px"}
-		br {}
-		button {style:"font-size:32px; text-align:center; width:608px", onclick: => click URL1},"Sök via Wordpress"
-		br {}
-		button {style:"font-size:32px; text-align:center; width:608px", onclick: => click URL2},"Sök via Google"
-		br {}
-		button {style:"font-size:32px; text-align:center; width:608px", onclick: => click URL3},"Sök i Bildbanken 1"
-		br {}
-		button {style:"font-size:32px; text-align:center; width:608px", onclick: => click URL4},"Sök i Bildbanken 2"
+		makeButton URL1, "Sök via Wordpress"
+		makeButton URL2, "Sök via Google"
+		makeButton URL3, "Sök i Bildbanken 1"
+		makeButton URL4, "Sök i Bildbanken 2"
