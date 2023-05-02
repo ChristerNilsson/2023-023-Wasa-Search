@@ -25,10 +25,10 @@ r4r =>
 		"Wasa SK sökruta",
 		br {}
 		data = input {style:"font-size:32px; width:600px", autofocus:true}
+		makeButton URL2, "Sök via Google (rek)"
 		makeButton URL1, "Sök via Wordpress"
-		makeButton URL2, "Sök via Google"
+		makeButton URL4, "Sök i Bildbanken 2 (rek)"
 		makeButton URL3, "Sök i Bildbanken 1"
-		makeButton URL4, "Sök i Bildbanken 2"
 		br {}
 		br {}
 		table {style:"border:1px solid black; margin:auto; border-collapse: collapse;"},
@@ -37,8 +37,17 @@ r4r =>
 				th tds, "BB1"
 				th tds, "BB2"
 			rad "Maximal upplösning", "Nej", "Ja"
-			rad "Beskrivande texter", "Nej", "Ja"
-			rad "Länkar till Inbjudan", "Nej", "Ja"
-			rad "Länkar till Resultat", "Nej", "Ja"
+			rad "Beskrivande text", "Nej", "Ja"
+			rad "Länk till Inbjudan", "Nej", "Ja"
+			rad "Länk till Resultat", "Nej", "Ja"
+			rad "Länk till Video", "Nej", "Ja"
 			rad "Zoom", "Nej", "Ja"
-			rad "Bildspel Direkt", "Nej", "Ja"
+			rad "Panorering", "Nej", "Ja"
+			rad "Bildspel", "Nej", "Ja"
+			rad "Sökning med OCH", "Ja", "Ja"
+			rad "Sökning med ELLER", "Nej", "Ja"
+			rad "Sökning på hela ord", "Ja", "Ja"
+			rad "Sökning på delar av ord", "Nej", "Ja"
+			rad "Skiftlägesokänslig", "Ja", "Ja"
+			rad "Skiftlägeskänslig", "Nej", "Ja"
+			rad "Kräver webbserver", "Ja", "Nej"
