@@ -45,6 +45,7 @@ export p = (a...) => h "p", a
 export table = (a...) => h "table", a
 export tr = (a...) => h "tr", a
 export td = (a...) => h "td", a
+export th = (a...) => h "th", a
 export rect   = (a...) => h "rect",a
 export select = (a...) => h "select", a
 export stop = (a...) => h "stop", a
