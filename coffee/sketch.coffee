@@ -53,4 +53,6 @@ r4r =>
 			rad "Sökning på delar av ord", "Nej", "Ja"
 			rad "Skiftlägesokänslig", "Ja", "Ja"
 			rad "Skiftlägeskänslig", "Nej", "Ja"
+			rad "Sökning på katalognamn", "Nej", "Ja"
+			rad "Sökning på bildnamn", "Ja", "Ja"
 			rad "Kräver webbserver", "Ja", "Nej"
