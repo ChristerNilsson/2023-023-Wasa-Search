@@ -2,17 +2,25 @@ import {r4r,div,button,input,br,table,tr,td,th,span} from '../js/utils.js'
 
 URL1 = "https://www.wasask.se/aaawasa/wordpress/?s="
 URL2 = "https://www.google.com/search?q=site:wasask.se "
-URL3 = "https://bildbanken.schack.se/?query="
-URL4 = "https://storage.googleapis.com/bildbanken2/index.html?query="
+URL3 = "https://stockholmsschack.se/?s="
+URL4 = "https://www.google.com/search?q=site:stockholmsschack.se "
+URL5 = "https://schack.se/?s="
+URL6 = "https://www.google.com/search?q=site:schack.se "
+URL7 = "https://bildbanken.schack.se/?query="
+URL8 = "https://storage.googleapis.com/bildbanken2/index.html?query="
 
 N = "Nej"
 J = "Ja"
 
 data = null
 click = (url) => window.location = url + data.value
-makeButton = (url, text,disabled=true) => [
-	br {}
-	button {style:"font-size:32px; text-align:center; width:608px", disabled, onclick: => click url}, text
+makeButtons = (urlw, urlg, text, w, g) => [
+	tr {},
+		td {}, text
+		td {},
+			button {style:"font-size:32px; text-align:center; width:150px", disabled:true, onclick: => click urlw}, w
+		td {},
+			button {style:"font-size:32px; text-align:center; width:150px", onclick: => click urlg}, g
 ]
 
 tds = {style:"border:1px solid black"}
@@ -37,12 +45,14 @@ r4r =>
 	div {style:"font-size:32px; text-align:center"},
 		"Wasa Schackklubb Sökverktyg",
 		br {}
-		data = input {style:"font-size:32px; width:600px", autofocus:true}
-		makeButton URL2, "Sök via Google (rek)",false
-		makeButton URL1, "Sök via Wordpress"
-		makeButton URL4, "Sök i Bildbanken 2 (rek)"
-		makeButton URL3, "Sök i Bildbanken 1"
+		data = input {style:"font-size:32px; width:500px", autofocus:true}
 		br {}
+		br {}
+		table {style:"border:1px solid black; margin:auto; border-collapse: collapse;"},
+			makeButtons URL1, URL2, "Wasa SK","WP","Google"
+			makeButtons URL3, URL4, "Stockholms SF","WP","Google"
+			makeButtons URL5, URL6, "Sveriges SF","WP","Google"
+			makeButtons URL7, URL8, "Bildbanken","BB1","BB2"
 		br {}
 		table {style:"border:1px solid black; margin:auto; border-collapse: collapse;"},
 			rubrik "Feature", "BB1", "BB2"
