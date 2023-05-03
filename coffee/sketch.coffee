@@ -1,9 +1,12 @@
-import {r4r,div,button,input,br,table,tr,td,th} from '../js/utils.js'
+import {r4r,div,button,input,br,table,tr,td,th,span} from '../js/utils.js'
 
 URL1 = "https://www.wasask.se/aaawasa/wordpress/?s="
 URL2 = "https://www.google.com/search?q=site:wasask.se "
 URL3 = "https://bildbanken.schack.se/?query="
 URL4 = "https://storage.googleapis.com/bildbanken2/index.html?query="
+
+N = "Nej"
+J = "Ja"
 
 data = null
 click = (url) => window.location = url + data.value
@@ -20,15 +23,19 @@ rubrik = (a,b,c) =>
 		th tds, b
 		th tds, c
 
-rad = (a,b,c) =>
+rad = (a,b,c,d="") =>
 	tr {},
 		td tds, a
 		td tds, b
-		td tds, c
+		if d==""
+			td tds,c
+		else
+			td tds,
+				span {title:d}, c
 
 r4r =>
 	div {style:"font-size:32px; text-align:center"},
-		"Wasa SK sökruta",
+		"Wasa Schackklubb Sökverktyg",
 		br {}
 		data = input {style:"font-size:32px; width:600px", autofocus:true}
 		makeButton URL2, "Sök via Google (rek)"
@@ -38,21 +45,22 @@ r4r =>
 		br {}
 		br {}
 		table {style:"border:1px solid black; margin:auto; border-collapse: collapse;"},
-			rubrik "Egenskap", "BB1", "BB2"
-			rad "Maximal upplösning", "Nej", "Ja"
-			rad "Beskrivande text", "Nej", "Ja"
-			rad "Länk till Inbjudan", "Nej", "Ja"
-			rad "Länk till Resultat", "Nej", "Ja"
-			rad "Länk till Video", "Nej", "Ja"
-			rad "Zoom", "Nej", "Ja"
-			rad "Panorering", "Nej", "Ja"
-			rad "Bildspel", "Nej", "Ja"
-			rad "Sökning med OCH", "Ja", "Ja"
-			rad "Sökning med ELLER", "Nej", "Ja"
-			rad "Sökning på hela ord", "Ja", "Ja"
-			rad "Sökning på delar av ord", "Nej", "Ja"
-			rad "Skiftlägesokänslig", "Ja", "Ja"
-			rad "Skiftlägeskänslig", "Nej", "Ja"
-			rad "Sökning på katalognamn", "Nej", "Ja"
-			rad "Sökning på bildnamn", "Ja", "Ja"
-			rad "Kräver webbserver", "Ja", "Nej"
+			rubrik "Feature", "BB1", "BB2"
+			rad "Bildtext", N, J
+			rad "Länk till Inbjudan", N, J
+			rad "Länk till Resultat", N, J
+			rad "Länk till Video", N, J
+			rad "Zoom", N, J, "Klicka på bilden, använd rullhjulet"
+			rad "Panorering", N, J,"Klicka på bilden, drag med musen"
+			rad "Bildspel", N, J, "Klicka på Add, därefter Play"
+			rad "Högupplösta bilder", N, J
+			rad "Sökning med OCH", J, J, "OCH anges ej"
+			rad "Sökning med ELLER", N, J, "ELLER anges ej"
+			rad "Sökning på hela ord", J, J, "All ikryssat"
+			rad "Sökning på delar av ord", N, J,"All ej ikryssat"
+			rad "Skiftlägesokänslig", J, J, "Case ej ikryssat"
+			rad "Skiftlägeskänslig", N, J, "Case ikryssat"
+			rad "Sökning på katalognamn", N, J
+			rad "Sökning på filnamn", J, J
+			rad "Sökning på text i bild", J, N
+			rad "Kräver webbserver", J, N

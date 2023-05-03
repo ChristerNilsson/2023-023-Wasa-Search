@@ -48,6 +48,7 @@ export td = (a...) => h "td", a
 export th = (a...) => h "th", a
 export rect   = (a...) => h "rect",a
 export select = (a...) => h "select", a
+export span = (a...) => h "span", a
 export stop = (a...) => h "stop", a
 export strong = (a...) => h "strong", a
 export svg = (a...) => h "svg", a
