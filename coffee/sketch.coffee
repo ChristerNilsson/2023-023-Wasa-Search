@@ -10,9 +10,9 @@ J = "Ja"
 
 data = null
 click = (url) => window.location = url + data.value
-makeButton = (url, text) => [
+makeButton = (url, text,disabled=true) => [
 	br {}
-	button {style:"font-size:32px; text-align:center; width:608px", onclick: => click url}, text
+	button {style:"font-size:32px; text-align:center; width:608px", disabled, onclick: => click url}, text
 ]
 
 tds = {style:"border:1px solid black"}
@@ -38,7 +38,7 @@ r4r =>
 		"Wasa Schackklubb Sökverktyg",
 		br {}
 		data = input {style:"font-size:32px; width:600px", autofocus:true}
-		makeButton URL2, "Sök via Google (rek)"
+		makeButton URL2, "Sök via Google (rek)",false
 		makeButton URL1, "Sök via Wordpress"
 		makeButton URL4, "Sök i Bildbanken 2 (rek)"
 		makeButton URL3, "Sök i Bildbanken 1"
