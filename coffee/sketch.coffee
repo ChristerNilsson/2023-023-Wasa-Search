@@ -18,7 +18,7 @@ makeButtons = (urlw, urlg, text, w, g) => [
 	tr {},
 		td {}, text
 		td {},
-			button {style:"font-size:32px; text-align:center; width:150px", disabled:true, onclick: => click urlw}, w
+			button {style:"font-size:32px; text-align:center; width:150px", onclick: => click urlw}, w
 		td {},
 			button {style:"font-size:32px; text-align:center; width:150px", onclick: => click urlg}, g
 ]
