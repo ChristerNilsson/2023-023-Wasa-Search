@@ -9,21 +9,22 @@ URL6 = "https://www.google.com/search?q=site:schack.se "
 URL7 = "https://bildbanken.schack.se/?query="
 URL8 = "https://storage.googleapis.com/bildbanken2/index.html?query="
 
-N = "Nej"
+N = ""
 J = "Ja"
 
 data = null
 click = (url) => window.location = url + data.value
-makeButtons = (urlw, urlg, text, w, g) => [
+makeButtons = (urlw, urlg, text, g) => [
 	tr {},
-		td {}, text
+		#td {}, text
 		td {},
-			button {style:"font-size:32px; text-align:center; width:150px", onclick: => click urlw}, w
+			button {style:"font-size:30px; text-align:center; width:320px", onclick: => click urlw}, text
 		td {},
-			button {style:"font-size:32px; text-align:center; width:150px", onclick: => click urlg}, g
+			button {style:"font-size:30px; text-align:center; width:320px", onclick: => click urlg}, g
 ]
 
-tds = {style:"border:1px solid black"}
+tds = {style:"border:1px solid black; text-align:left"}
+tdt = {style:"border:1px solid black"}
 
 rubrik = (a,b,c) =>
 	tr {},
@@ -34,25 +35,21 @@ rubrik = (a,b,c) =>
 rad = (a,b,c,d="") =>
 	tr {},
 		td tds, a
-		td tds, b
-		if d==""
-			td tds,c
-		else
-			td tds,
-				span {title:d}, c
+		td tdt, b
+		td tdt, c
+		td tds, d
 
 r4r =>
-	div {style:"font-size:32px; text-align:center"},
-		"Wasa Schackklubb Sökverktyg",
+	div {style:"font-size:30px; text-align:center"},
 		br {}
-		data = input {style:"font-size:32px; width:500px", autofocus:true}
+		data = input {style:"font-size:30px; width:640px", autofocus:true, placeholder:"ange noll eller flera sökord"}
 		br {}
 		br {}
 		table {style:"border:1px solid black; margin:auto; border-collapse: collapse;"},
-			makeButtons URL1, URL2, "Wasa SK","WP","Google"
-			makeButtons URL3, URL4, "Stockholms SF","WP","Google"
-			makeButtons URL5, URL6, "Sveriges SF","WP","Google"
-			makeButtons URL7, URL8, "Bildbanken","BB1","BB2"
+			makeButtons URL1, URL2, "Wasa Schackklubb","Google"
+			makeButtons URL3, URL4, "Stockholms SF","Google"
+			makeButtons URL5, URL6, "Sveriges SF","Google"
+			makeButtons URL7, URL8, "Bildbanken 1","Bildbanken 2"
 		br {}
 		table {style:"border:1px solid black; margin:auto; border-collapse: collapse;"},
 			rubrik "Feature", "BB1", "BB2"
@@ -60,17 +57,17 @@ r4r =>
 			rad "Länk till Inbjudan", N, J
 			rad "Länk till Resultat", N, J
 			rad "Länk till Video", N, J
-			rad "Zoom", N, J, "Klicka på bilden, använd rullhjulet"
-			rad "Panorering", N, J,"Klicka på bilden, drag med musen"
-			rad "Bildspel", N, J, "Klicka på Add, därefter Play"
-			rad "Högupplösta bilder", N, J
-			rad "Sökning med OCH", J, J, "OCH anges ej"
-			rad "Sökning med ELLER", N, J, "ELLER anges ej"
-			rad "Sökning på hela ord", J, J, "All ikryssat"
-			rad "Sökning på delar av ord", N, J,"All ej ikryssat"
-			rad "Skiftlägesokänslig", J, J, "Case ej ikryssat"
-			rad "Skiftlägeskänslig", N, J, "Case ikryssat"
-			rad "Sökning på katalognamn", N, J
-			rad "Sökning på filnamn", J, J
-			rad "Sökning på text i bild", J, N
+			rad "Zoom", N, J, "Klick + rullhjul"
+			rad "Panorering", N, J,"Klick + mushasning"
+			rad "Bildspel", N, J, "Add + Play"
+			rad "Högupplösta bilder", N, J,"Klick"
+			rad "Sökning med OCH", J, J, "anges ej"
+			rad "Sökning med ELLER", N, J, "anges ej"
+			rad "Sökning på hela ord", J, J, "All = [x]"
+			rad "Sökning på orddelar", N, J,"All = [  ]"
+			rad "Skiftlägesokänslig", J, J, "Case = [  ]"
+			rad "Skiftlägeskänslig", N, J, "Case = [x]"
+			rad "Sökning i katalognamn", N, J
+			rad "Sökning i filnamn", J, J
+			rad "Sökning i text i bild", J, N
 			rad "Kräver webbserver", J, N
