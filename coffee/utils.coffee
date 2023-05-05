@@ -70,3 +70,19 @@ export removeIndex = (array, index) =>
 	b = array.slice index + 1
 	console.log a.concat b
 	a.concat b
+
+countTabs = (s) =>
+	n = 0
+	for c in s
+		if c == "\t" then n++ else return n
+
+export indented = (s) =>
+	for line in s.split "\n" 
+		n = countTabs(line)
+		if n==0
+			div {},
+				line
+				br {}
+		else
+			div {style:"margin-left:" + countTabs(line)*20 + "px"},
+				line

@@ -1,4 +1,4 @@
-import {r4r,div,button,input,br,table,tr,td,th,span} from '../js/utils.js'
+import {signal,r4r,div,a,button,input,br,table,tr,td,th,span} from '../js/utils.js'
 
 URL1 = "https://www.wasask.se/aaawasa/wordpress/?s="
 URL2 = "https://www.google.com/search?q=site:wasask.se "
@@ -11,6 +11,8 @@ URL8 = "https://storage.googleapis.com/bildbanken2/index.html?query="
 
 N = ""
 J = "Ja"
+
+[page,setPage] = signal 0
 
 data = null
 click = (url) => window.location = url + data.value
@@ -39,7 +41,7 @@ rad = (a,b,c,d="") =>
 		td tdt, c
 		td tds, d
 
-r4r =>
+search = =>
 	div {style:"font-size:30px; text-align:center"},
 		br {}
 		data = input {style:"font-size:30px; width:540px", autofocus:true, placeholder:"ange noll eller flera sökord"}
@@ -73,3 +75,14 @@ r4r =>
 			rad "Korrekt kronologi", N, J,"Knäpptidpunkt"
 			rad "Sökning i text i bild", J, N
 			rad "Kräver webbserver", J, N
+
+r4r =>
+	div {style:"font-size:20px; text-align:center"},
+		a {href:"kontakt.html"},"Kontakt"
+		" • "
+		a {href:"styrelse.html"},"Styrelse"
+		" • "
+		a {href:"https://resultat.schack.se/ShowClubRatingServlet?clubid=38481"},"Ranking"
+		" • "
+		a {href:"http://wasask.se/VT-2023_inbjudningar.php"},"Inbjudningar"
+		search()
