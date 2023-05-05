@@ -1,4 +1,4 @@
-import {r4r,br,div,indented} from '../js/utils.js'
+import {r4r,indented} from '../js/utils.js'
 
 r4r =>
 	indented """
@@ -12,7 +12,7 @@ r4r =>
 		Kontakt: David Douhan
 			Telefon: 072-362 70 50
 			Mail: douhan.music (at) gmail.com
-		Plats
+		Plats:
 			LINK|Norra Real, Roslagsgatan 1|https://www.google.com/maps/place/Roslagsgatan+1,+113+55+Stockholm
 		Torsdagar: 17:00-19:00
 		Tisdagar : 17:00-19:00

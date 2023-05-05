@@ -1,4 +1,4 @@
-import {r4r,br,div,indented} from '../js/utils.js'
+import {r4r,indented} from '../js/utils.js'
 
 r4r =>
 	indented """
@@ -8,7 +8,7 @@ r4r =>
 		Kontakt: Tom Wedberg, ordf
 			Telefon: 070-797 24 13
 			Mail: sparbax (at) hotmail.com
-		Plats
+		Plats:
 			LINK|Time Hotel, Vanadisvägen 12|https://www.google.com/maps/place/Vanadisvägen+12,+113+46+Stockholm
 		Torsdagar: 18:30-
 		Avgift:
