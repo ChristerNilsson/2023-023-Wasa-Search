@@ -78,8 +78,9 @@ countTabs = (s) =>
 
 export indented = (s) =>
 	for line in s.split "\n" 
-		n = countTabs(line)
-		if n==0
+		n = countTabs line
+		console.log n
+		if n == 0 and not line.includes "LINK"
 			div {},
 				line
 				br {}
