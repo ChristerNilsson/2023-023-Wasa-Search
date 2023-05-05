@@ -84,5 +84,9 @@ export indented = (s) =>
 				line
 				br {}
 		else
-			div {style:"margin-left:" + countTabs(line)*20 + "px"},
-				line
+			div {style:"margin-left:" + n*20 + "px"},
+				if line.includes "LINK"
+					arr = line.split " "
+					a {href:arr[2]}, arr[1]
+				else
+					line

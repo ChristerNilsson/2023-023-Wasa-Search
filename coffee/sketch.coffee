@@ -78,11 +78,15 @@ search = =>
 
 r4r =>
 	div {style:"font-size:20px; text-align:center"},
+		a {href:"http://wasask.se/VT-2023_inbjudningar.php"},"Inbjudningar"
+		" • "
 		a {href:"kontakt.html"},"Kontakt"
 		" • "
-		a {href:"styrelse.html"},"Styrelse"
+		a {href:"https://wasask.se/aaawasa/wordpress"},"Nyheter"
 		" • "
 		a {href:"https://resultat.schack.se/ShowClubRatingServlet?clubid=38481"},"Ranking"
 		" • "
-		a {href:"http://wasask.se/VT-2023_inbjudningar.php"},"Inbjudningar"
+		a {href:"https://www.wasask.se/lag_speldatum_ht2022-vt2023.ulenkar.php"},"Speldatum"
+		" • "
+		a {href:"styrelse.html"},"Styrelse"
 		search()
