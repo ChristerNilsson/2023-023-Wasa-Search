@@ -77,17 +77,16 @@ countTabs = (s) =>
 		if c == "\t" then n++ else return n
 
 export indented = (s) =>
-	for line in s.split "\n" 
-		n = countTabs line
-		console.log n
-		if n == 0 and not line.includes "LINK"
-			div {},
-				line
-				br {}
-		else
+	div {style:"font-family:monospace"},
+		for line in s.split "\n" 
+			n = countTabs line
 			div {style:"margin-left:" + n*20 + "px"},
 				if line.includes "LINK"
-					arr = line.split " "
+					arr = line.split "|"
 					a {href:arr[2]}, arr[1]
+				else if line.includes "EMPTY"
+					br {}
+				else if line.includes "HEADER"
+					h1 {}, line.split("|")[1]
 				else
 					line
