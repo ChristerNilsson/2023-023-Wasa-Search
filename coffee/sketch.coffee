@@ -2,7 +2,7 @@ import {r4r,a,div,h2,p} from '../js/utils.js'
 
 r4r => div {style:"font-family:monospace; font-size:16px"},
 	h2 {},"Wasa Schackklubb"
-	a {href:"https://storage.googleapis.com/bildbanken2/index.html?query=Wasa_SK"}, "Bilder"
+	a {href:"https://storage.googleapis.com/bildbanken2/index.html?query=Wasa"}, "Bilder"
 	" • "
 	a {href:"inbjudningar.html"}, "Inbjudningar"
 	" • "
