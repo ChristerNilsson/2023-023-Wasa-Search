@@ -88,7 +88,7 @@ r4r =>
 		" • "
 		a {href:"senior.html"},"Senior"
 		" • "
-		a {href:"https://www.wasask.se/lag_speldatum_ht2022-vt2023.ulenkar.php"},"Speldatum"
+		a {href:"speldatum.html"},"Speldatum"
 		" • "
 		a {href:"styrelse.html"},"Styrelse"
 		search()
