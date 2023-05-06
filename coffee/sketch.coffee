@@ -3,7 +3,7 @@ import {r4r,indented} from '../js/utils.js'
 r4r =>
 	indented """
 		HEADER|Wasa Schackklubb
-		Denna sida är medvetet enkel för att fungera på alla plattformar.
+		Denna sida är minimal för att även fungera på mobiler.
 
 		Chat GPT föreslog följande slogans:
 			Framåt Wasa Schackklubb - för en starkare schackgemenskap
