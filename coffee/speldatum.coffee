@@ -6,7 +6,7 @@ r4r =>
 		HEADER|Lag-DM
 		WASA|Inbjudan|Inbjudan_Lag_DM_2022_2023.pdf
 		WASA|Tävlingsbestämmelser|Tavlingsbestammelser_Lag_DM_2022_2023.pdf
-		EMPTY
+
 		TOUR|Elitserien|10508
 			Wasa SK I: 19/9 17/10 14/11 12/12 30/1
 				Lagledare: Birger Wenzel Tel: 076-701 27 26
@@ -40,7 +40,7 @@ r4r =>
 				Lagledare: Majkel Kokocinski Tel: 076-052 60 05
 		HEADER|Stockholmsserien
 		WASA|Inbjudan|Inbjudan_Stockholmsserien_2022_2023.pdf
-		EMPTY
+
 		TOUR|Division 5|10726
 			OKT23 • NOV13 • DEC04 • JAN15 • FEB05 • MAR05 • MAR19
 			Wasa SK V • David Douhan • 072-362 70 50

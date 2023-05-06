@@ -4,7 +4,7 @@ r4r =>
 	indented """
 		HEADER|Styrelse
 		Organisationsnummer: 80 20 09 - 3038
-		EMPTY
+
 		Ordförande
 			Tom Wedberg
 		Vice Ordförande

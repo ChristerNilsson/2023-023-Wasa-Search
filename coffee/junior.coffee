@@ -8,7 +8,7 @@ r4r =>
 		LINK|Parent info|https://wasask.se/Wasa SK - Junior Parent Info.pdf
 		LINK|Tjejträning|https://wasask.se/Tjejträning_VT_2023.pdf
 		LINK|Medlemskap|https://wasask.se/Ansokan_wasa_juniorer_blankett_2023.pdf
-		EMPTY
+
 		Kontakt: David Douhan
 			Telefon: 072-362 70 50
 			Mail: douhan.music (at) gmail.com

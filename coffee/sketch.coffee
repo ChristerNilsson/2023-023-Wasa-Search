@@ -1,4 +1,4 @@
-import {signal,r4r,div,a,button,input,br,table,tr,td,th,span} from '../js/utils.js'
+import {r4r,div,a,button,input,br,table,tr,td,th,span} from '../js/utils.js'
 
 URL1 = "https://www.wasask.se/aaawasa/wordpress/?s="
 URL2 = "https://www.google.com/search?q=site:wasask.se "
@@ -11,8 +11,6 @@ URL8 = "https://storage.googleapis.com/bildbanken2/index.html?query="
 
 N = ""
 J = "Ja"
-
-[page,setPage] = signal 0
 
 data = null
 click = (url) => window.location = url + data.value

@@ -4,7 +4,7 @@ r4r =>
 	indented """
 		HEADER|Senior
 		LINK|Spelschema|https://wasask.se/Vårsäsong 2023.pdf
-		EMPTY
+
 		Kontakt: Tom Wedberg, ordf
 			Telefon: 070-797 24 13
 			Mail: sparbax (at) hotmail.com
