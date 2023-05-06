@@ -2,9 +2,10 @@ import {r4r,indented} from '../js/utils.js'
 
 r4r =>
 	indented """
-		HEADER|Speldatum
+		HEADER|Speldatum 2022/2023
 		HEADER|Lag-DM
 		WASA|Inbjudan|Inbjudan_Lag_DM_2022_2023.pdf
+		
 		WASA|Tävlingsbestämmelser|Tavlingsbestammelser_Lag_DM_2022_2023.pdf
 
 		TOUR|Elitserien|10508
@@ -28,7 +29,7 @@ r4r =>
 
 		HEADER|Allsvenskan
 		TOUR|Elitserien|10421
-			14/10 • 15/10 • 16/10 • 20/1 • 21/1 • 22/1 • 10/3 • 11/3 • 12/3
+			OKT 14 15 16 • JAN 20 21 22 • MAR 10 11 12
 				Wasa SK I • Birger Wenzel • 076-701 27 26
 		TOUR|Division 2:3|10430
 			23/10 • 13/11 • 4/12 • 15/1 • 5/2 • 5/3 • 19/3
@@ -37,11 +38,12 @@ r4r =>
 		TOUR|Division 3:3|10438
 			23/10 • 13/11 • 4/12 • 15/1 • 5/2 • 5/3 • 19/3
 				Wasa SK IV • Majkel Kokocinski • 076-052 60 05
+
 		HEADER|Stockholmsserien
 		WASA|Inbjudan|Inbjudan_Stockholmsserien_2022_2023.pdf
 
 		TOUR|Division 5|10726
-			OKT23 • NOV13 • DEC04 • JAN15 • FEB05 • MAR05 • MAR19
+			OKT 23 • NOV 13 • DEC 4 • JAN 15 • FEB 5 • MAR 5 • MAR 19
 				Wasa SK V • David Douhan • 072-362 70 50
 				BB2|Bilder|Stockholmsserien
 	"""

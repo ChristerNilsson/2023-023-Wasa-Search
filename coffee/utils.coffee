@@ -35,7 +35,10 @@ export figCaption = (a...) => h "figCaption", a
 export form = (a...) => h "form", a
 export g = (a...) => h "g", a
 export h1 = (a...) => h "h1", a
+export h2 = (a...) => h "h2", a
 export h3 = (a...) => h "h3", a
+export h4 = (a...) => h "h4", a
+export h5 = (a...) => h "h5", a
 export header = (a...) => h "header",a
 export img = (a...) => h "img", a
 export input = (a...) => h "input", a
@@ -94,7 +97,7 @@ export indented = (s) =>
 				else if cmd == "TOUR" then a {href:TOUR + arr[2]}, arr[1]
 				else if cmd == "ANMÄL" then a {href:ANMÄL + arr[2] + "/anmalan"}, arr[1]
 				else if cmd == "" then br {}
-				else if cmd == "HEADER" then h1 {}, arr[1]
+				else if cmd == "HEADER" then h2 {}, arr[1]
 				else if cmd == "BB2" then a {href:BB2 + arr[2]},arr[1]
 				else if cmd == "WASA" then a {href:WASA + arr[2]},arr[1]
 				else if cmd == "BOLD" then b {}, arr[1]
