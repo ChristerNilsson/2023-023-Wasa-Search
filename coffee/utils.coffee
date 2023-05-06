@@ -78,7 +78,7 @@ countTabs = (s) =>
 		if c == "\t" then n++ else return n
 
 export indented = (s) =>
-	div {style:"font-family:monospace;font-size:16px"},
+	div {style:"font-family:monospace; font-size:16px"},
 		for line in s.split "\n" 
 			n = countTabs line
 			div {style:"margin-left:" + n*20 + "px"},

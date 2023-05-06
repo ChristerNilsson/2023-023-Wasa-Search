@@ -4,9 +4,13 @@ r4r =>
 	indented """
 		HEADER|Junior
 		LINK|Program|program.html
+
 		LINK|Föräldrainfo|https://wasask.se/Foraldrarinfo_3.11_vt2023.pdf
+		
 		LINK|Parent info|https://wasask.se/Wasa SK - Junior Parent Info.pdf
+		
 		LINK|Tjejträning|https://wasask.se/Tjejträning_VT_2023.pdf
+		
 		LINK|Medlemskap|https://wasask.se/Ansokan_wasa_juniorer_blankett_2023.pdf
 
 		Kontakt: David Douhan
