@@ -13,4 +13,4 @@
 	* BB2   |text|länk - Länk till Bildbanken 2
 
 Man behöver inte utnyttja ovanstående möjligheter.  
-Man kan åstadkomma allt som html kan åstadkomma.
+Man kan åstadkomma allt som html kan åstadkomma, se t ex sketch.coffee
