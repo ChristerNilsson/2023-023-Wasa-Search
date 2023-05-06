@@ -70,7 +70,7 @@ r4r =>
 			rad "Sökning i filnamn", J, J
 			rad "Sökning i katalognamn", N, J
 			rad "Sökning i viss katalog", N, J
-			rad "Korrekt kronologi", N, J,"Knäpptidpunkt"
+			rad "Korrekt kronologi", N, J,"Kamerans tid"
 			rad "Sökning i text i bild", J, N
 			rad "Kräver webbserver", J, N
 
