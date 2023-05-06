@@ -80,17 +80,20 @@ export indented = (s) =>
 	div {style:"font-family:monospace;font-size:16px"},
 		for line in s.split "\n" 
 			n = countTabs line
-			arr = line.split "|"
 			div {style:"margin-left:" + n*20 + "px"},
 				if line.includes "LINK"
+					arr = line.split "|"
 					a {href:arr[2]}, arr[1]
 				else if line.includes "TOUR"
+					arr = line.split "|"
 					a {href:"https://member.schack.se/ShowTournamentServlet?id="+arr[2]}, arr[1]
 				else if line.includes "EMPTY"
 					br {}
 				else if line.includes "HEADER"
+					arr = line.split "|"
 					h1 {}, arr[1]
 				else if line.includes "BB2"
+					arr = line.split "|"
 					a {href:"https://storage.googleapis.com/bildbanken2/index.html?query="+arr[2]},arr[1]
 				else
 					line
