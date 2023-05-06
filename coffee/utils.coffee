@@ -23,6 +23,7 @@ export log = console.log
 export abs = Math.abs
 
 export a = (a...) => h "a", a
+export b = (a...) => h "b", a
 export br = (a...) => h "br", a
 export button = (a...) => h "button", a
 export circle = (a...) => h "circle", a
@@ -87,7 +88,10 @@ export indented = (s) =>
 				else if line.includes "TOUR"
 					arr = line.split "|"
 					a {href:"https://member.schack.se/ShowTournamentServlet?id="+arr[2]}, arr[1]
-				else if line.includes "EMPTY"
+				else if line.includes "ANMÄL"
+					arr = line.split "|"
+					a {href:"https://member.schack.se/turnering/" + arr[2] + "/anmalan"}, arr[1]
+				else if line.trim() == ""
 					br {}
 				else if line.includes "HEADER"
 					arr = line.split "|"
@@ -95,5 +99,11 @@ export indented = (s) =>
 				else if line.includes "BB2"
 					arr = line.split "|"
 					a {href:"https://storage.googleapis.com/bildbanken2/index.html?query="+arr[2]},arr[1]
+				else if line.includes "WASA"
+					arr = line.split "|"
+					a {href:"https://www.wasask.se/"+arr[2]},arr[1]
+				else if line.includes "BOLD"
+					arr = line.split "|"
+					b {}, arr[1]
 				else
 					line

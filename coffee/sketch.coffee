@@ -78,7 +78,7 @@ search = =>
 
 r4r =>
 	div {style:"font-size:20px; text-align:center"},
-		a {href:"http://wasask.se/VT-2023_inbjudningar.php"},"Inbjudningar"
+		a {href:"inbjudningar.html"},"Inbjudningar"
 		" • "
 		a {href:"junior.html"},"Junior"
 		" • "

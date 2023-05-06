@@ -4,8 +4,8 @@ r4r =>
 	indented """
 		HEADER|Speldatum
 		HEADER|Lag-DM
-		LINK|Inbjudan|https://www.wasask.se/Inbjudan_Lag_DM_2022_2023.pdf
-		LINK|Tävlingsbestämmelser|https://www.wasask.se/Tavlingsbestammelser_Lag_DM_2022_2023.pdf
+		WASA|Inbjudan|Inbjudan_Lag_DM_2022_2023.pdf
+		WASA|Tävlingsbestämmelser|Tavlingsbestammelser_Lag_DM_2022_2023.pdf
 		EMPTY
 		TOUR|Elitserien|10508
 			Wasa SK I: 19/9 17/10 14/11 12/12 30/1
@@ -39,7 +39,7 @@ r4r =>
 			Wasa SK IV: 23/10 13/11 4/12 15/1 5/2 5/3 19/3
 				Lagledare: Majkel Kokocinski Tel: 076-052 60 05
 		HEADER|Stockholmsserien
-		LINK|Inbjudan|https://www.wasask.se/Inbjudan_Stockholmsserien_2022_2023.pdf
+		WASA|Inbjudan|Inbjudan_Stockholmsserien_2022_2023.pdf
 		EMPTY
 		TOUR|Division 5|10726
 			OKT23 • NOV13 • DEC04 • JAN15 • FEB05 • MAR05 • MAR19
