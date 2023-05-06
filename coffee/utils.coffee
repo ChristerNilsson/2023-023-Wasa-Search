@@ -77,33 +77,25 @@ countTabs = (s) =>
 	for c in s
 		if c == "\t" then n++ else return n
 
+TOUR  = "https://member.schack.se/ShowTournamentServlet?id="
+ANMÄL = "https://member.schack.se/turnering/"
+BB2   = "https://storage.googleapis.com/bildbanken2/index.html?query="
+WASA  = "https://www.wasask.se/"
+
 export indented = (s) =>
 	div {style:"font-family:monospace; font-size:16px"},
 		for line in s.split "\n" 
 			n = countTabs line
+			line = line.trim()
+			arr = line.split "|"
+			cmd = arr[0]
 			div {style:"margin-left:" + n*20 + "px"},
-				if line.includes "LINK"
-					arr = line.split "|"
-					a {href:arr[2]}, arr[1]
-				else if line.includes "TOUR"
-					arr = line.split "|"
-					a {href:"https://member.schack.se/ShowTournamentServlet?id="+arr[2]}, arr[1]
-				else if line.includes "ANMÄL"
-					arr = line.split "|"
-					a {href:"https://member.schack.se/turnering/" + arr[2] + "/anmalan"}, arr[1]
-				else if line.trim() == ""
-					br {}
-				else if line.includes "HEADER"
-					arr = line.split "|"
-					h1 {}, arr[1]
-				else if line.includes "BB2"
-					arr = line.split "|"
-					a {href:"https://storage.googleapis.com/bildbanken2/index.html?query="+arr[2]},arr[1]
-				else if line.includes "WASA"
-					arr = line.split "|"
-					a {href:"https://www.wasask.se/"+arr[2]},arr[1]
-				else if line.includes "BOLD"
-					arr = line.split "|"
-					b {}, arr[1]
-				else
-					line
+				if cmd == "LINK" then a {href:arr[2]}, arr[1]
+				else if cmd == "TOUR" then a {href:TOUR + arr[2]}, arr[1]
+				else if cmd == "ANMÄL" then a {href:ANMÄL + arr[2] + "/anmalan"}, arr[1]
+				else if cmd == "" then br {}
+				else if cmd == "HEADER" then h1 {}, arr[1]
+				else if cmd == "BB2" then a {href:BB2 + arr[2]},arr[1]
+				else if cmd == "WASA" then a {href:WASA + arr[2]},arr[1]
+				else if cmd == "BOLD" then b {}, arr[1]
+				else line
