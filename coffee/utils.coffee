@@ -6,6 +6,10 @@ import { createStore }  from "https://cdn.skypack.dev/solid-js@1.2.6/store"
 import h                from "https://cdn.skypack.dev/solid-js@1.2.6/h"
 import { render }       from "https://cdn.skypack.dev/solid-js@1.2.6/web"
 
+export dump = (obj) =>
+	console.log obj #.outerHTML
+	obj
+
 export signal = createSignal
 export effect = createEffect
 export memo = createMemo
@@ -87,7 +91,7 @@ WASA  = "https://www.wasask.se/"
 
 export indented = (s) =>
 	div {style:"font-family:monospace; font-size:16px"},
-		for line in s.split "\n" 
+		for line in s.split "\n"
 			n = countTabs line
 			line = line.trim()
 			arr = line.split "|"
