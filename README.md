@@ -1,6 +1,6 @@
 * Syftet med detta projekt är att kunna visa webbsidorna på mobiler.
 
-* .xyz transpileras till .html av xyz2html.py
+* .lean transpileras till .html av lean2html.py
 
 * Indentering sker med noll eller flera tab-steg
 * Första ordet kan vara ett kommando
