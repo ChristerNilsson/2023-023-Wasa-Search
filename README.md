@@ -11,7 +11,7 @@
 	* TOUR  | text | länk - Länk till member.schack.se, resultat
 	* WASA  | text | länk - Länk till wasask.se
 	* BB2   | text | länk - Länk till Bildbanken 2
-	* DOT              - •
+	* DOT                 - •
 	* A     | text | länk - Naken länk: ```<a href=länk>text</a>```
 	* Blanka rader är signifikanta
 
@@ -19,6 +19,8 @@ HTML kan användas. T ex ```<b></b>```
 Vokabulären har utökats med ```<red></red>``` och ```<green></green>```  
 
 ## Exempel
+
+### 2023-04.lean (indata)
 ```
 HEADER|Inbjudningar April 2023
 WASA|Påskturneringen - GP|Inbjudan_Påskturneringen_2023.pdf
@@ -26,7 +28,7 @@ WASA|Påskturneringen - GP|Inbjudan_Påskturneringen_2023.pdf
 	2023-04-07 • 2023-04-10
 	TOUR|Resultat|10380
 ```
-
+### 2023-04.html (utdata)
 ```
 <div class="I0"><h2>Inbjudningar April 2023</h2></div>
 <div class="I0"><a href='https://www.wasask.se/Inbjudan_Påskturneringen_2023.pdf'>Påskturneringen - GP</a></div>
@@ -49,7 +51,11 @@ Indenteringen styrs med "margin-left"
 
 ## Sökning
 
-Man kan samla sajtens innehåll (.lean) i en json som söks linjärt efter förekomster.  
+### Metod
+Se till att Google kravlar sig genom filerna.  
+[Google Search Console](https://search.google.com/search-console?resource_id=https://christernilsson.github.io/2023-023-Wasa-Search/)
+
+### Plan B
+Samla sajtens innehåll (.lean) i en json som söks linjärt efter förekomster.  
 Denna .json laddas bara när man vill söka. Länkarna presenteras.  
 .json-filen byggs av lean2html.py  
-Alternativt placera filerna på en domän som söks av Google, t ex Wasa SK.  
