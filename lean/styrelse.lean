@@ -15,7 +15,7 @@ LINK|Ledamot • |David Douhan|images/David_Douhan.jpg
 
 LINK|Ledamot • |Lennarth Eriksson|images/Lennarth_Eriksson.jpg
 
-SMALL|Materialförvaltare • |Hans Rånby|AaUBX3mRFP.jpg
+SMALL|Materialförvaltare • |Hans Rånby|AJCCHfAWYx.jpg
 
 Revisor • ?
 
