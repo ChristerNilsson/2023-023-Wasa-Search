@@ -35,9 +35,12 @@ def anmäl(arr): return a(arr, ANMÄL, '/anmalan')
 def bb2(arr): return a(arr, BB2)
 def wasa(arr): return a(arr, WASA)
 def bold(arr): return "<b>"+arr[1]+"</b>"
-def br(): return "<br>"
+def br(arr): return "<br>"
 def h2(arr): return "<h2>"+arr[1]+"</h2>"
 def small(arr): return a(arr, SMALL)
+def dot(arr): return " • "
+
+hash = {"LINK":link,"TOUR":tour,"ANMÄL":anmäl,"BB2":bb2,"WASA":wasa,"A":link,"SMALL":small,"HEADER":h2,"BOLD":bold,"DOT":dot,"":br}
 
 def transpile (filename) :
 	global count
@@ -67,17 +70,19 @@ def transpile (filename) :
 		arr = line.split("|")
 		cmd = arr[0]
 
-		if cmd == "LINK" :    line = link(arr)
-		elif cmd == "TOUR" :  line = tour(arr)
-		elif cmd == "ANMÄL" : line = anmäl(arr)
-		elif cmd == "BB2" :   line = bb2(arr)
-		elif cmd == "WASA" :  line = wasa(arr)
-		elif cmd == "A" :     line = link(arr)
-		elif cmd == "SMALL" : line = small(arr)
-		elif cmd == "" :      line = br()
-		elif cmd == "HEADER" : line = h2(arr)
-		elif cmd == "BOLD" :  line = bold(arr)
-		elif cmd == "DOT" :   line = " • "
+		if cmd in hash: line = hash[cmd](arr)
+
+		# if cmd == "LINK" :    line = link(arr)
+		# elif cmd == "TOUR" :  line = tour(arr)
+		# elif cmd == "ANMÄL" : line = anmäl(arr)
+		# elif cmd == "BB2" :   line = bb2(arr)
+		# elif cmd == "WASA" :  line = wasa(arr)
+		# elif cmd == "A" :     line = link(arr)
+		# elif cmd == "SMALL" : line = small(arr)
+		# elif cmd == "" :      line = br()
+		# elif cmd == "HEADER" : line = h2(arr)
+		# elif cmd == "BOLD" :  line = bold(arr)
+		# elif cmd == "DOT" :   line = dot(arr  #)" • "
 
 		if cmd == "" or cmd == 'A' or cmd == 'DOT':
 			res.append(("\t"*n) + line)
