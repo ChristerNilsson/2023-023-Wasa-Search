@@ -70,7 +70,7 @@ def transpile (filename) :
 			res.append(("  "*n) + '<div class="I'+str(n)+'">' + line + '</div>')
 	res.append('</div>')
 	res.append('</body>')
-	with open('utdata/' + filename.replace('.xyz','.html'), 'w', encoding='utf8') as g:
+	with open(filename.replace('.xyz','.html'), 'w', encoding='utf8') as g:
 		g.write('\n'.join(res))
 
 start = time.time()
