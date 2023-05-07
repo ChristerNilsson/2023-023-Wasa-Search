@@ -14,6 +14,7 @@ TOUR  = "https://member.schack.se/ShowTournamentServlet?id="
 ANMÄL = "https://member.schack.se/turnering/"
 BB2   = "https://storage.googleapis.com/bildbanken2/index.html?query="
 WASA  = "https://www.wasask.se/"
+SMALL = "https://storage.googleapis.com/bildbanken2/small/"
 
 def a(text,link): return "<a href='{link}'>{text}</a>".format(link=link,text=text)
 def link(arr): return a(arr[1], arr[2])
@@ -24,6 +25,7 @@ def wasa(arr): return a(arr[1], WASA+arr[2])
 def bold(text): return "<b>"+text+"</b>"
 def br(): return "<br>"
 def h2(text): return "<h2>"+text+"</h2>"
+def small(arr): return a(arr[1], SMALL+arr[2])
 
 def transpile (filename) :
 	global count
@@ -55,14 +57,15 @@ def transpile (filename) :
 
 		if cmd == "LINK" :    line = link(arr)
 		elif cmd == "TOUR" :  line = tour(arr)
-		elif cmd == "ANMÄL" : line = anmäl(arr) #{href:ANMÄL + arr[2] + "/anmalan"}, arr[1]
+		elif cmd == "ANMÄL" : line = anmäl(arr)
+		elif cmd == "BB2" :   line = bb2(arr)
+		elif cmd == "WASA" :  line = wasa(arr)
+		elif cmd == "A" :     line = link(arr)
+		elif cmd == "SMALL" : line = small(arr)
 		elif cmd == "" :      line = br()
-		elif cmd == "HEADER" : line = h2(arr[1]) # {}, arr[1]
-		elif cmd == "BB2" :   line = bb2(arr) #{href:BB2 + arr[2]},arr[1]
-		elif cmd == "WASA" :  line = wasa(arr) # {href:WASA + arr[2]},arr[1]
+		elif cmd == "HEADER" : line = h2(arr[1])
 		elif cmd == "BOLD" :  line = bold(arr[1])
 		elif cmd == "DOT" :   line = " • "
-		elif cmd == "A" :     line = link(arr)
 
 		if cmd == "" or cmd == 'A' or cmd == 'DOT':
 			res.append(("  "*n) + line)
