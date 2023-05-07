@@ -46,7 +46,7 @@ r4r =>
 		br {}
 		br {}
 		table {style:"border:1px solid black; margin:auto; border-collapse: collapse;"},
-			makeButtons URL1, URL2, "Wasa Schackklubb","Google"
+			makeButtons URL1, URL2, "Wasa SK Classic","Google"
 			makeButtons URL3, URL4, "Stockholms SF","Google"
 			makeButtons URL5, URL6, "Sveriges SF","Google"
 			makeButtons URL7, URL8, "Bildbanken 1","Bildbanken 2"

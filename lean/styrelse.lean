@@ -1,25 +1,22 @@
 HEADER|Styrelse
 Organisationsnummer: 80 20 09 - 3038
 
-Ordförande • Tom Wedberg
+SMALL|Ordförande • |Tom Wedberg|9qOERR_pVO.jpg
 
 SMALL|Vice ordförande • |Birger Wenzel|AVSHhBilgl.jpg
 
 Kassör • Sten Arvidsson
 
-Sekreterare • Niclas Hedin
+SMALL|Sekreterare • |Niclas Hedin|AaTEWiNLwf.jpg
 
-Ledamot • Charlotte Kämpe
+LINK|Ledamot • |Charlotte Kämpe|images/Charlotte_Kämpe.jpg
 
-Ledamot • David Douhan
+LINK|Ledamot • |David Douhan|images/David_Douhan.jpg
 
-Ledamot • Lennarth Eriksson
+LINK|Ledamot • |Lennarth Eriksson|images/Lennarth_Eriksson.jpg
 
-Materialförvaltare • Hans Rånby
+SMALL|Materialförvaltare • |Hans Rånby|AaUBX3mRFP.jpg
 
 Revisor • ?
 
 Webmaster • ?
-
-
-<img style="position:absolute; left:350; top:60" src="http://wasask.se/bild/Drottning2_min.jpg" height="400">
