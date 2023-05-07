@@ -97,8 +97,8 @@ sitemap = []
 start = time.time()
 for filename in os.listdir('lean'):
 	transpile(filename)
-	sitemap.append(filename.replace('.lean','.html'))
-	#sitemap.append("https://christernilsson.github.io/2023-023-Wasa-Search/" + filename.replace('.lean','.html'))
+	#sitemap.append(filename.replace('.lean','.html'))
+	sitemap.append("https://christernilsson.github.io/2023-023-Wasa-Search/" + filename.replace('.lean','.html'))
 
 with open('sitemap.txt', 'w', encoding='utf8') as g:
 	g.write('\n'.join(sitemap))
