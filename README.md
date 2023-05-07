@@ -46,3 +46,10 @@ Indenteringen styrs med "margin-left"
   .I4 {margin-left: 80px}
 </style>
 ```
+
+## Sökning
+
+Man kan samla sajtens innehåll (.lean) i en json som söks linjärt efter förekomster.  
+Denna .json laddas bara när man vill söka. Länkarna presenteras.  
+.json-filen byggs av lean2html.py  
+Alternativt placera filerna på en domän som söks av Google, t ex Wasa SK.  

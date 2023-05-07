@@ -20,3 +20,6 @@ Materialförvaltare • Hans Rånby
 Revisor • ?
 
 Webmaster • ?
+
+
+<img style="position:absolute; left:350; top:60" src="http://wasask.se/bild/Drottning2_min.jpg" height="400">
