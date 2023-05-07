@@ -1,6 +1,12 @@
 import os
 import time
 
+TOUR  = "https://member.schack.se/ShowTournamentServlet?id="
+ANMÄL = "https://member.schack.se/turnering/"
+BB2   = "https://storage.googleapis.com/bildbanken2/index.html?query="
+WASA  = "https://www.wasask.se/"
+SMALL = "https://storage.googleapis.com/bildbanken2/small/"
+
 count = 0
 
 def countTabs (s) :
@@ -9,12 +15,6 @@ def countTabs (s) :
 		if c != "\t": break
 		n += 1
 	return n
-
-TOUR  = "https://member.schack.se/ShowTournamentServlet?id="
-ANMÄL = "https://member.schack.se/turnering/"
-BB2   = "https://storage.googleapis.com/bildbanken2/index.html?query="
-WASA  = "https://www.wasask.se/"
-SMALL = "https://storage.googleapis.com/bildbanken2/small/"
 
 def a(arr, prefix="", suffix=""):
 	if len(arr) == 3: # COMMAND | text | link
@@ -28,7 +28,6 @@ def a(arr, prefix="", suffix=""):
 		return "{prompt}<a href='{link}'>{text}</a>".format(prompt=prompt, text=text, link=prefix + link + suffix)
 	else:
 		print('Error message')
-
 
 def link(arr): return a(arr)
 def tour(arr): return a(arr, TOUR)
