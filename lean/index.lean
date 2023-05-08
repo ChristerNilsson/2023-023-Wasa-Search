@@ -5,6 +5,8 @@ A|Inbjudningar|inbjudningar.html
 DOT
 A|Junior|junior.html
 DOT
+A|Kalender|kalender.html
+DOT
 A|Nyheter|http://wasask.se/aaawasa/wordpress
 DOT
 A|Ranking|https://resultat.schack.se/ShowClubRatingServlet?clubid=38481
