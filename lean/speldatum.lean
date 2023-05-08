@@ -6,13 +6,19 @@ WASA|Tävlingsbestämmelser|Tavlingsbestammelser_Lag_DM_2022_2023.pdf
 
 TOUR|Elitserien|10508
 	SEP 19 • OKT 17 • NOV 14 • DEC 12 • JAN 30
-		Wasa SK I • <b>Birger Wenzel</b> • 076-701 27 26
+	Wasa SK I
+	<b>Birger Wenzel</b>
+	076-701 27 26
 TOUR|Division 1|10509
-	SEP 26 • OKT 24 • NOV 21 • DEC 19 • FEB 6
+	SEP26 OKT24 NOV21 DEC19 FEB06
 		Wasa SK II • <red>Karl-Gustav Sjölund</red> • 073-645 34 07
 TOUR|Division 2|10510
-	OKT 3 • OKT 31 • NOV 28 • JAN 16 • FEB 13
-		Wasa SK III • <green>Birger</green> Wenzel • 076-701 27 26
+	BB2|OKT 03 • |Kristallens SK II|Division_2 2022-10-03 
+	BB2|OKT 31 • |SK Rockanden, Sthlm III|Division_2 2022-10-31
+	BB2|NOV 28 • |Stockholms SS III|Division_2 2022-11-28
+	BB2|JAN 16 • |Kungstornet II|Division_2 2023-01-16
+	BB2|FEB 13 • |Täby SK|Division_2 2023-02-13
+	Wasa SK III • <green>Birger</green> Wenzel • 076-701 27 26
 TOUR|Division 3|10511
 	OKT 10 • NOV 7 • DEC 5 • JAN 23 • FEB 20
 		Wasa SK IV • Birger Wenzel • 076-701 27 26

@@ -1,14 +1,11 @@
 import sys
 import os
-#import time
 
 TOUR  = "https://member.schack.se/ShowTournamentServlet?id="
 ANMÄL = "https://member.schack.se/turnering/"
 BB2   = "https://storage.googleapis.com/bildbanken2/index.html?query="
 WASA  = "https://www.wasask.se/"
 SMALL = "https://storage.googleapis.com/bildbanken2/small/"
-
-#count = 0
 
 def countTabs (s) :
 	n = 0
@@ -44,7 +41,6 @@ def dot(arr): return " • "
 hash = {"LINK":link,"TOUR":tour,"ANMÄL":anmäl,"BB2":bb2,"WASA":wasa,"A":link,"SMALL":small,"HEADER":h2,"BOLD":bold,"DOT":dot,"":br}
 
 def transpile (filename) :
-#	global count
 	with open('lean/'+filename,encoding='utf8') as f:
 		s = f.read()
 	res = []
@@ -57,7 +53,6 @@ def transpile (filename) :
 	res.append('<body>')
 	res.append('<div style="font-family:monospace; font-size:16px">')
 	for line in s.split("\n"):
-#		count += 1
 		n = countTabs(line)
 		line = line.replace('<red>','<font color=red>').replace('</red>','</font>')
 		line = line.replace('<green>','<font color=green>').replace('</green>','</font>')
@@ -76,8 +71,6 @@ def transpile (filename) :
 	with open(filename.replace('.lean','.html'), 'w', encoding='utf8') as g:
 		g.write('\n'.join(res))
 
-#start = time.time()
-
 transpile(sys.argv[1])
 
 sitemap = []
@@ -86,5 +79,3 @@ for filename in os.listdir('lean'):
 
 with open('sitemap.txt', 'w', encoding='utf8') as g:
 	g.write('\n'.join(sitemap))
-
-#print(round(count/(time.time()-start)),'lines/sec')
