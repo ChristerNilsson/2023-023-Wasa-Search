@@ -59,3 +59,10 @@ Se till att Google kravlar sig genom filerna.
 Samla sajtens innehåll (.lean) i en json som söks linjärt efter förekomster.  
 Denna .json laddas bara när man vill söka. Länkarna presenteras.  
 .json-filen byggs av lean2html.py  
+
+## Run On Save
+Kör alla filer just nu.
+```
+	"match": "\\.lean$",
+	"cmd": "cd ${workspaceRoot} && python lean2html.py"
+```
