@@ -11,7 +11,7 @@ fr 07 08 09 10 #senior
 to 13 #junior
 	Juniorträning
 to 13 #senior
-	Wasa: Föredrag av någon mästare
+	Föredrag av någon mästare
 fr 14 #junior
 	WASA|Påsklovsturneringen|Inbjudan_Påsklovsturnering_2023.pdf
 ti 18 #tjej
@@ -19,7 +19,7 @@ ti 18 #tjej
 to 20 #junior
 	Juniorträning
 to 20 #senior
-	Wasa: Genomgång av tävlingspartier
+	Genomgång av tävlingspartier
 lö 22 23 #junior
 	WASA|Kadettallsvenskans kval (2007-yngre)|kadett2023.pdf
 sö 23 #senior
@@ -31,7 +31,7 @@ fr 26 #event
 to 27 #junior
 	Juniorträning
 to 27 #senior
-	Wasa: Avslutning med prisutdelning
+	Avslutning med prisutdelning
 lö 29 30 #junior
 	WASA|Wasa JGP|Inbjudan_Wasa_JGP_2023.pdf
 
