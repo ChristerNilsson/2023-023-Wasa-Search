@@ -18,6 +18,7 @@ c = (i) => i % 7
 Z = 50
 kalender= null
 data = {}
+logo = null
 released = true
 
 J='white'
@@ -258,6 +259,7 @@ window.mouseReleased = -> # to make Android work
 
 window.preload = =>
 	data = loadJSON "kalender.json"
+	logo = loadImage "wasa.png"
 
 window.setup = =>
 	noLoop()
@@ -302,4 +304,6 @@ content = (date) =>
 
 window.draw = ->
 	background 'lightgray'
+	image logo, 0.7*Z, 5.6*Z, 1.8*Z, 1.8*Z
 	kalender.draw()
+
