@@ -9,6 +9,9 @@ URL6 = "https://www.google.com/search?q=site:schack.se "
 URL7 = "https://bildbanken.schack.se/?query="
 URL8 = "https://storage.googleapis.com/bildbanken2/index.html?query="
 
+URL9 = "https://www.google.com/search?q=site:https://www.svenskalag.se/wasask-seniorer "
+URL10 = "https://www.google.com/search?q=site:https://www.svenskalag.se/wasask-juniorer "
+
 N = ""
 J = "Ja"
 
@@ -50,6 +53,7 @@ r4r =>
 			makeButtons URL3, URL4, "Stockholms SF","Google"
 			makeButtons URL5, URL6, "Sveriges SF","Google"
 			makeButtons URL7, URL8, "Bildbanken 1","Bildbanken 2"
+			makeButtons URL9, URL10, "Svenska Lag Sr","Svenska Lag Jr"
 		br {}
 		table {style:"font-size:24px; border:1px solid black; margin:auto; border-collapse: collapse;"},
 			rubrik "Feature", "BB1", "BB2"
