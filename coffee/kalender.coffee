@@ -8,7 +8,6 @@
 #			Junior
 #			Styrelse
 #		Sök
-# Lag/Individ ?
 
 import {r4r,div,a,span,log,range} from '../js/utils.js'
 
