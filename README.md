@@ -66,3 +66,23 @@ Kör alla filer just nu.
 	"match": "\\.lean$",
 	"cmd": "cd ${workspaceRoot} && python lean2html.py"
 ```
+
+## Kalender
+* Detta är startskärmens utseende.
+* Dagens datum är markerat, 2023-04-29
+* Dagens enda aktivitet, Wasa JGP, har attributen Junior samt Distrikt
+* Klicka på annan dag för att byta dag
+* Klicka på Förra eller Nästa för att byta månad.
+* De färgglada knapparna har state. Totalt 4x4=16 möjliga.
+```
+  S J T -
+K x x x x
+D x x x x
+N x x x x
+- x x x x
+```
+* Reset återställer datum och visar alla events.
+* Inre ringen visar Senior/Junior/Tjej
+* Yttre ringen visar Klubb/Distrikt/Nation
+
+![Kalender](images/screenDump.JPG)

@@ -91,13 +91,16 @@ geoClick = (obj) ->
 class Button
 	constructor : (@prompt,@x,@y,@w,@h,@bg,@click) ->
 	draw : =>
-		push()
-		fill @bg
-		if @prompt in [age,geo] then textSize 0.45*Z else textSize 0.3*Z
-		rect @x, @y, @w,@h,5
-		if 'red green blue'.includes @bg then fill 'white' else fill 'black'		
-		text @prompt, @x, @y
-		pop()
+		if @image
+			image @image, @x,@y,@w,@h
+		else
+			push()
+			fill @bg
+			if @prompt in [age,geo] then textSize 0.45*Z else textSize 0.3*Z
+			rect @x, @y, @w,@h,5
+			if 'red green blue'.includes @bg then fill 'white' else fill 'black'
+			text @prompt, @x, @y
+			pop()
 	click: =>
 		console.log @prompt
 	inside : -> @x-@w/2 < mouseX < @x+@w/2 and @y-@h/2 < mouseY < @y+@h/2
@@ -225,10 +228,11 @@ resize = ->
 
 	w = 5*Z/3
 	h = Z
-	x0 = 0.75*Z+0.5*w 
+	x0 = 1.4*Z
 	x1 = 2.75*Z+0.5*w
 	x2 = 2.75*Z+1.5*w
 	x3 = 2.75*Z+2.5*w
+	y0 = 7.55*Z
 	y1 = 6*Z
 	y2 = 7*Z
 	y3 = 8*Z
@@ -241,7 +245,8 @@ resize = ->
 	kalender.buttons.push new Button "Distrikt",x2,y2,w,h,D,geoClick
 	kalender.buttons.push new Button "Nation",  x3,y2,w,h,N,geoClick
 
-	kalender.buttons.push new Button "Reset",   x0,y3,w,h,'white', resetClick
+	kalender.buttons.push new Button "",   x0,y0,1.2*w,1.2*w,'white', resetClick
+	_.last(kalender.buttons).image = logo
 	kalender.buttons.push new Button "Förra",   x1,y3,w,h,'white', => monthClick -1
 	kalender.buttons.push new Button "Nästa",   x3,y3,w,h,'white', => monthClick +1
 
@@ -267,6 +272,7 @@ window.setup = =>
 	canvas.parent 'sketch-holder'
 	textAlign CENTER, CENTER
 	rectMode CENTER
+	imageMode CENTER
 	data = data.events
 	kalender = new Kalender data
 	resize()
@@ -304,6 +310,5 @@ content = (date) =>
 
 window.draw = ->
 	background 'lightgray'
-	image logo, 0.7*Z, 5.6*Z, 1.8*Z, 1.8*Z
 	kalender.draw()
 
