@@ -1,5 +1,7 @@
 # TODO
 
+# state tappas när man går till inbjudan och resultat
+
 # Hamburgare
 #		Nyheter
 #		Rating
@@ -94,7 +96,7 @@ class Button
 		push()
 		fill @bg
 		if @prompt in [age,geo] then textSize 0.45*Z else textSize 0.3*Z
-		rect @x, @y, @w,@h
+		rect @x, @y, @w,@h,10
 		if 'red green blue'.includes @bg then fill 'white' else fill 'black'		
 		text @prompt, @x, @y
 		pop()
@@ -118,7 +120,7 @@ class Day
 		arr = ['white','black']
 		if month.slice(7,10) == '-' + twoDigits @prompt then arr.reverse()
 		fill arr[0]
-		rect @x, @y, Z, Z
+		rect @x, @y, Z, Z,10
 		fill arr[1]
 		text @prompt, @x, @y - 0.3*Z
 		@drawAttributes()
@@ -295,11 +297,11 @@ content = (date) =>
 					div {style:"margin-left:20px"},
 						if item.i then [
 							" • "
-							a {href:item.i}, "Inbjudan"
+							a {href:item.i, target:"_blank"}, "Inbjudan"
 						]
 						if item.r then [
 							" • "
-							a {href:item.r}, "Resultat"
+							a {href:item.r, target:"_blank"}, "Resultat"
 						]
 
 window.draw = ->
