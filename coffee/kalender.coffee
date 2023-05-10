@@ -1,7 +1,5 @@
 # TODO
 
-# state tappas när man går till inbjudan och resultat
-
 # Hamburgare
 #		Nyheter
 #		Rating
@@ -23,7 +21,7 @@ data = {}
 logo = null
 released = true
 
-J='white'
+J='lightblue'
 S='yellow'
 T='pink'
 
@@ -96,7 +94,7 @@ class Button
 		push()
 		fill @bg
 		if @prompt in [age,geo] then textSize 0.45*Z else textSize 0.3*Z
-		rect @x, @y, @w,@h,10
+		rect @x, @y, @w,@h,5
 		if 'red green blue'.includes @bg then fill 'white' else fill 'black'		
 		text @prompt, @x, @y
 		pop()
@@ -120,7 +118,7 @@ class Day
 		arr = ['white','black']
 		if month.slice(7,10) == '-' + twoDigits @prompt then arr.reverse()
 		fill arr[0]
-		rect @x, @y, Z, Z,10
+		rect @x, @y, Z, Z,5
 		fill arr[1]
 		text @prompt, @x, @y - 0.3*Z
 		@drawAttributes()
@@ -235,13 +233,13 @@ resize = ->
 	y2 = 7*Z
 	y3 = 8*Z
 
-	kalender.buttons.push new Button "Senior",  x1,y1,w,h,'yellow',ageClick
-	kalender.buttons.push new Button "Junior",  x2,y1,w,h,'white',ageClick
-	kalender.buttons.push new Button "Tjej",    x3,y1,w,h,'pink',ageClick
+	kalender.buttons.push new Button "Senior",  x1,y1,w,h,S,ageClick
+	kalender.buttons.push new Button "Junior",  x2,y1,w,h,J,ageClick
+	kalender.buttons.push new Button "Tjej",    x3,y1,w,h,T,ageClick
 
-	kalender.buttons.push new Button "Klubb",   x1,y2,w,h,'red',geoClick
-	kalender.buttons.push new Button "Distrikt",x2,y2,w,h,'green',geoClick
-	kalender.buttons.push new Button "Nation",  x3,y2,w,h,'blue',geoClick
+	kalender.buttons.push new Button "Klubb",   x1,y2,w,h,K,geoClick
+	kalender.buttons.push new Button "Distrikt",x2,y2,w,h,D,geoClick
+	kalender.buttons.push new Button "Nation",  x3,y2,w,h,N,geoClick
 
 	kalender.buttons.push new Button "Reset",   x0,y3,w,h,'white', resetClick
 	kalender.buttons.push new Button "Förra",   x1,y3,w,h,'white', => monthClick -1
@@ -280,7 +278,7 @@ content = (date) =>
 	res = _.filter(kalender.items, (item) => item.d.includes(date) and (age=="" or item.a[0]==age[0]) and (geo=="" or item.a[1]==geo[0]))
 
 	r4r =>
-		div {style:"margin-left:10px"},
+		div {class:"noselect", style:"margin-left:10px"},
 			date
 			for item in res
 				bg0 = {J,S,T}[item.a[0]]
