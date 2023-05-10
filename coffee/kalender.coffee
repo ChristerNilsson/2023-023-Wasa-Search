@@ -1,10 +1,5 @@
 # TODO
 
-# Månaderna startar alltid på en lördag!
-# Kontaktstuds
-# byte av månad => date = 0
-# Markera vald dag med boldface
-
 # Hamburgare
 #		Nyheter
 #		Rating
@@ -33,7 +28,8 @@ K='red'
 D='green'
 N='blue'
 
-month = "2023-04"
+month = (new Date()).toISOString().slice 0,10 # yyyy-mm eller yyyy-mm-dd
+console.log month
 age = "" # Senior Junior Tjej
 geo = "" # Klubb Distrikt Nation
 
@@ -50,9 +46,9 @@ console.assert 52 == getWeek "2022-01-01"
 console.assert 53 == getWeek "2021-01-01"
 console.assert  1 == getWeek "2019-12-31"
 
-daysInMonth = (year, month) => new Date(year, month, 0).getDate()
+daysInMonth = (month) => new Date(month.slice(0,4), month.slice(5,7), 0).getDate()
 monthClick = (delta) =>
-	[yyyy,mm] = month.split '-'
+	[yyyy,mm] = month.slice(0,7).split '-'
 	yyyy = parseInt yyyy
 	mm   = parseInt mm
 	if mm == 12 and delta == 1
@@ -65,11 +61,12 @@ monthClick = (delta) =>
 		mm += delta
 		if mm < 10 then mm = '0' + mm
 	month = yyyy + "-" + mm
+	console.log 'monthClick1',month
 	kalender.filtrera()
-	console.log month
+	console.log 'monthClick2',month
 
 pretty = (month) =>
-	[yyyy,mm] = month.split '-'
+	[yyyy,mm,dd] = month.split '-'
 	mm = parseInt mm
 	" Januari Februari Mars April Maj Juni Juli Augusti September Oktober November December".split(' ')[mm]
 
@@ -82,15 +79,12 @@ geoClick = (obj) ->
 
 class Button
 	constructor : (@prompt,@x,@y,@w,@h,@bg,@click) ->
-#		@x *= width/100
-#		@y *= height/100
 	draw : =>
 		push()
 		fill @bg
-		if @prompt in [age,geo] then strokeWeight 5 else strokeWeight 1
+		if @prompt in [age,geo] then textSize 0.45*Z else textSize 0.3*Z
 		rect @x, @y, @w,@h
-		if 'red green blue'.includes @bg then fill 'white' else fill 'black'
-		textSize 0.3*Z
+		if 'red green blue'.includes @bg then fill 'white' else fill 'black'		
 		text @prompt, @x, @y
 		pop()
 	click: =>
@@ -99,21 +93,27 @@ class Button
 
 class Day
 	constructor : (@prompt,@i,@x,@y,@attributes) ->
-	click : => 
-		content @prompt
-		# console.log	@prompt
+	click : =>
+		month = month.slice(0,7) + '-' + twoDigits @prompt
+		@draw()
+		content month
+		console.log	month
 	inside : (index) ->
 		ci = c index+kalender.offset
 		ri = r index+kalender.offset
 		Z*ci-Z/2 < mouseX-kalender.mx < Z*ci+Z/2 and Z*ri-Z/2 < mouseY-kalender.my < Z*ri+Z/2
 
 	draw : =>
-		fill 'white'
+		push()
+		arr = ['white','black']
+		#console.log 'draw',month,twoDigits @prompt
+		if month.slice(7,10) == '-' + twoDigits @prompt then arr.reverse()
+		fill arr[0]
 		rect @x, @y, Z, Z
-		@drawAttributes()
-		fill 'black'
-		textSize 0.3*Z
+		fill arr[1]
 		text @prompt, @x, @y - 0.3*Z
+		@drawAttributes()
+		pop()
 
 	drawAttributes : =>
 		d = 0.1*Z
@@ -147,12 +147,14 @@ class Day
 		pop()
 
 filterData = (items, month, attr) =>
-	_.filter items, (item) => item.d.includes(month) and item.a.includes attr
+	console.log 'filterData',month.slice(0,7)
+	_.filter items, (item) => item.d.includes(month.slice(0,7)) and item.a.includes attr
 
 attributes = (items,date) =>
 	res = _.filter(items, (item) => item.d.includes(date) and (age=="" or item.a[0]==age[0]) and (geo=="" or item.a[1]==geo[0]))
 	res = _.map res, (item) => item.a
-	res.sort().reverse()
+	#res.sort().reverse()
+	res
 
 addDays = (date, days) => new Date date.getTime() + days * 24*60*60000
 
@@ -160,16 +162,23 @@ class Kalender
 	constructor : (@items) ->
 		@mx = 3*Z/2
 		@my = 3*Z/2
-		@date = new Date month + '-01'
-		@month = @date.getMonth()
+		#@date = new Date month
+		#@month = @date.getMonth()
 
 		@filtrera()
 
+	getOffset : =>
+		res = new Date month.slice(0,7) + '-01' #@date.getFullYear(),@date.getMonth(),1
+		res = (res.getDay()-1) %% 7
+		console.log "getOffset", month,res
+		res
+
 	filtrera : =>
 		items = filterData @items, month,""
-		@offset = (@date.getDay()-1) %% 7
+		@offset = @getOffset()
+		#console.log "filtrera", @offset, @date.getDay(), @date
 		@days = []
-		for i in range daysInMonth @date.getFullYear(), @date.getMonth()+1
+		for i in range daysInMonth month #@date.getFullYear(), @date.getMonth()+1
 			if @offset+i >= 0
 				x = @mx + Z*((@offset+i) %% 7)
 				y = @my + Z*floor (@offset+i)/7
@@ -180,7 +189,7 @@ class Kalender
 		textSize 0.3*Z
 		for i in range 7
 			text "Mån Tis Ons Tor Fre Lör Sön".split(' ')[i], kalender.mx+Z*i, 0.25*Z
-		d = new Date month + '-01'
+		d = new Date month.slice(0,7) + '-01'
 		for i in range 6
 			weekNo = getWeek d
 			d = addDays d, 7
@@ -200,8 +209,6 @@ class Kalender
 		for button in @buttons
 			if button.inside() then button.click button
 
-			
-
 window.onresize = -> resize()
 
 resize = ->
@@ -217,8 +224,6 @@ resize = ->
 
 	kalender.buttons = []
 
-	# w = 1.5*Z
-	# h = 0.9*Z
 	w = 5*Z/3
 	h = Z
 	x1 = 2.75*Z+0.5*w
@@ -236,8 +241,8 @@ resize = ->
 	kalender.buttons.push new Button "Distrikt",x2,y2,w,h,'green',geoClick
 	kalender.buttons.push new Button "Nation",  x3,y2,w,h,'blue',geoClick
 
-	kalender.buttons.push new Button "Förra",   x1,y3,w,h,'white',=> monthClick -1
-	kalender.buttons.push new Button "Nästa",   x3,y3,w,h,'white',=> monthClick +1
+	kalender.buttons.push new Button "Förra",   x1,y3,w,h,'white', => monthClick -1
+	kalender.buttons.push new Button "Nästa",   x3,y3,w,h,'white', => monthClick +1
 
 	draw()
 
@@ -269,12 +274,9 @@ content = (date) =>
 	element = document.getElementById "app"
 	element.replaceChildren()
 
-	# filterData = (items, month, attr) =>
-	date = month + "-" + twoDigits(date)
 	console.log date
 	res = _.filter(kalender.items, (item) => item.d.includes(date) and (age=="" or item.a[0]==age[0]) and (geo=="" or item.a[1]==geo[0]))
 
-	# items = kalender.filterData kalender.items, month + "-04",""
 	console.log res
 
 	r4r =>
@@ -298,7 +300,6 @@ content = (date) =>
 					if item.r
 						div {style:"margin-left:20px"},
 							a {href:item.r}, "Resultat"
-
 
 window.draw = ->
 	background 'lightgray'
