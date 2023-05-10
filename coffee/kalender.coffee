@@ -1,8 +1,10 @@
 # TODO
+
 # Månaderna startar alltid på en lördag!
 # Kontaktstuds
 # byte av månad => date = 0
 # Markera vald dag med boldface
+
 # Hamburgare
 #		Nyheter
 #		Rating
@@ -15,14 +17,13 @@
 
 import {r4r,div,a,span,log,range} from '../js/utils.js'
 
-#N = 7
-
 r = (i) => i // 7
 c = (i) => i % 7
 
 Z = 50
 kalender= null
 data = {}
+released = true
 
 J='white'
 S='yellow'
@@ -70,7 +71,7 @@ monthClick = (delta) =>
 pretty = (month) =>
 	[yyyy,mm] = month.split '-'
 	mm = parseInt mm
-	" Januari Februari Mars April Maj Juni Juli Augusti September Oktober November December".split(' ')[mm] + ' ' + yyyy
+	" Januari Februari Mars April Maj Juni Juli Augusti September Oktober November December".split(' ')[mm]
 
 ageClick = (obj) ->
 	age = if age == obj.prompt then "" else obj.prompt
@@ -81,8 +82,8 @@ geoClick = (obj) ->
 
 class Button
 	constructor : (@prompt,@x,@y,@w,@h,@bg,@click) ->
-		@x *= width/100
-		@y *= height/100
+#		@x *= width/100
+#		@y *= height/100
 	draw : =>
 		push()
 		fill @bg
@@ -184,7 +185,8 @@ class Kalender
 			weekNo = getWeek d
 			d = addDays d, 7
 			text "v" + weekNo, 0.375*Z, kalender.my+Z*i
-		text pretty(month), Z*4.0, 8.2*Z
+		text pretty(month),    Z*5.25, 7.85*Z
+		text month.slice(0,4), Z*5.25, 8.25*Z
 
 		for day in @days
 			day.draw()
@@ -198,13 +200,15 @@ class Kalender
 		for button in @buttons
 			if button.inside() then button.click button
 
+			
+
 window.onresize = -> resize()
 
 resize = ->
 
-	resizeCanvas innerWidth-20, innerWidth*1.1
+	resizeCanvas innerWidth-20, innerWidth*1.05
 
-	Z = width/8
+	Z = width/7.8
 	kalender.mx = 1.25*Z
 	kalender.my = Z
 	for day in kalender.days
@@ -213,28 +217,39 @@ resize = ->
 
 	kalender.buttons = []
 
-	w = 1.5*Z
+	# w = 1.5*Z
+	# h = 0.9*Z
+	w = 5*Z/3
 	h = Z
+	x1 = 2.75*Z+0.5*w
+	x2 = 2.75*Z+1.5*w
+	x3 = 2.75*Z+2.5*w
+	y1 = 6*Z
+	y2 = 7*Z
+	y3 = 8*Z
 
-	kalender.buttons.push new Button "Förra",  17,93,w,h,'white',=> monthClick -1
-	kalender.buttons.push new Button "Nästa",  87,93,w,h,'white',=> monthClick +1
+	kalender.buttons.push new Button "Senior",  x1,y1,w,h,'yellow',ageClick
+	kalender.buttons.push new Button "Junior",  x2,y1,w,h,'white',ageClick
+	kalender.buttons.push new Button "Tjej",    x3,y1,w,h,'pink',ageClick
 
-	w = 1.5*Z
-	h = Z
+	kalender.buttons.push new Button "Klubb",   x1,y2,w,h,'red',geoClick
+	kalender.buttons.push new Button "Distrikt",x2,y2,w,h,'green',geoClick
+	kalender.buttons.push new Button "Nation",  x3,y2,w,h,'blue',geoClick
 
-	kalender.buttons.push new Button "Senior",  45+4,76-7,w,h,'yellow',ageClick
-	kalender.buttons.push new Button "Junior",  64+4,76-7,w,h,'white',ageClick
-	kalender.buttons.push new Button "Tjej",    83+4,76-7,w,h,'pink',ageClick
-
-	kalender.buttons.push new Button "Klubb",   45+4,89-8,w,h,'red',geoClick
-	kalender.buttons.push new Button "Distrikt",64+4,89-8,w,h,'green',geoClick
-	kalender.buttons.push new Button "Nation",  83+4,89-8,w,h,'blue',geoClick
+	kalender.buttons.push new Button "Förra",   x1,y3,w,h,'white',=> monthClick -1
+	kalender.buttons.push new Button "Nästa",   x3,y3,w,h,'white',=> monthClick +1
 
 	draw()
 
 window.mousePressed = =>
+	if !released then return # to make Android work 
+	released = false
 	kalender.mousePressed mouseX,mouseY
 	draw()
+
+window.mouseReleased = -> # to make Android work 
+	released = true 
+	false
 
 window.preload = =>
 	data = loadJSON "kalender.json"
