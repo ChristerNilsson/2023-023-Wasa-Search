@@ -7,7 +7,7 @@ URL4 = "https://www.google.com/search?q=site:stockholmsschack.se "
 URL5 = "https://schack.se/?s="
 URL6 = "https://www.google.com/search?q=site:schack.se "
 URL7 = "https://bildbanken.schack.se/?query="
-URL8 = "https://storage.googleapis.com/bildbanken2/index.html?query="
+URL8 = "https://storage.googleapis.com/bildbank2/index.html?query="
 
 URL9 = "https://www.google.com/search?q=site:https://www.svenskalag.se/wasask-seniorer "
 URL10 = "https://www.google.com/search?q=site:https://www.svenskalag.se/wasask-juniorer "
